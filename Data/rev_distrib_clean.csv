@@ -1,0 +1,48 @@
+Distribution,Revenue_Stream,count
+Aggregation,Other,1
+Aggregation,Individual gifts,1
+Aggregation,Advertising,1
+Audience,Advertising,1
+Audience,Individual gifts,1
+Audience,Institution Funding,1
+Email,Individual gifts,7
+Email,Advertising,4
+Email,Institution Funding,4
+Email,Audience,2
+Email,Other,1
+Events,Individual gifts,1
+Owned and operated mobile app(s),Institution Funding,3
+Owned and operated mobile app(s),Advertising,1
+Owned and operated mobile app(s),Individual gifts,1
+Owned and operated mobile app(s),Audience,1
+Podcast,Institution Funding,2
+Podcast,Other,1
+Print,Advertising,1
+Print,Individual gifts,1
+Print,Institution Funding,1
+Print,Other,1
+Social media,Advertising,33
+Social media,Institution Funding,29
+Social media,Individual gifts,12
+Social media,Audience,5
+Social media,Other,4
+Social media,None,1
+Syndicated feed or content partnerships,Institution Funding,11
+Syndicated feed or content partnerships,Advertising,7
+Syndicated feed or content partnerships,Individual gifts,5
+Syndicated feed or content partnerships,Other,2
+Television,Advertising,1
+Text,Institution Funding,2
+Text,Individual gifts,1
+Third party content platforms,Advertising,16
+Third party content platforms,Institution Funding,10
+Third party content platforms,Individual gifts,2
+Third party content platforms,Audience,2
+Third party content platforms,Other,1
+Third party content platforms,None,1
+Website,Advertising,33
+Website,Institution Funding,29
+Website,Individual gifts,14
+Website,Other,6
+Website,Audience,6
+Website,None,1

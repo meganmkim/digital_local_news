@@ -1,0 +1,95 @@
+Distribution,Revenue_Stream,count
+ Email,Major individual gifts,2
+ Email,Small individual gifts,1
+ Email,Direct sold advertising,1
+ Events,Small individual gifts,1
+ Owned and operated mobile app(s),Philanthropic funding from major institutions,1
+ Owned and operated mobile app(s),Direct sold advertising,1
+ Podcast,Grants,1
+ Podcast,Foundation funding,1
+ Podcast,Events,1
+ Print,Major individual gifts,1
+ Radio,Major individual gifts,1
+ Radio,Foundation funding,1
+ Radio,Direct sold advertising,1
+ Social media,Direct sold advertising,15
+ Social media,Foundation funding,8
+ Social media,Major individual gifts,5
+ Social media,Small individual gifts,4
+ Social media,Philanthropic funding from major institutions,4
+ Social media,Events,2
+ Social media,Programmatic advertising,2
+ Social media,Reader membership,2
+ Social media,Reader subscriptions,1
+ Social media,Grants,1
+ Social media,Other Marketing Services,1
+ Social media,"Haven’t generated revenue yet, but intend to do so",1
+ Syndicated feed or content partnerships,Direct sold advertising,7
+ Syndicated feed or content partnerships,Foundation funding,5
+ Syndicated feed or content partnerships,Philanthropic funding from major institutions,4
+ Syndicated feed or content partnerships,Small individual gifts,3
+ Syndicated feed or content partnerships,Major individual gifts,2
+ Syndicated feed or content partnerships,Grants,2
+ Syndicated feed or content partnerships,Other forms of corporate sponsorship,1
+ Syndicated feed or content partnerships,Events,1
+ Television,Direct sold advertising,1
+ Text,Foundation funding,2
+ Text,Major individual gifts,1
+ Third party content platforms,Direct sold advertising,15
+ Third party content platforms,Foundation funding,4
+ Third party content platforms,Philanthropic funding from major institutions,4
+ Third party content platforms,Reader membership,2
+ Third party content platforms,Major individual gifts,2
+ Third party content platforms,Grants,2
+ Third party content platforms,Other Marketing Services,1
+ Third party content platforms,Programmatic advertising,1
+ Third party content platforms,"Haven’t generated revenue yet, but intend to do so",1
+ Website,Direct sold advertising,19
+ Website,Foundation funding,12
+ Website,Philanthropic funding from major institutions,6
+ Website,Small individual gifts,5
+ Website,Major individual gifts,4
+ Website,Grants,4
+ Website,Reader membership,2
+ Website,Reader subscriptions,2
+ Website,Events,1
+ Website,Other Marketing Services,1
+ Website,Other forms of corporate sponsorship,1
+ Website,Programmatic advertising,1
+ Website,Syndicated Content,1
+Aggregation,Direct sold advertising,1
+Aggregation,Other Marketing Services,1
+Aggregation,Small individual gifts,1
+Email,Direct sold advertising,3
+Email,Small individual gifts,3
+Email,Foundation funding,2
+Email,Grants,2
+Email,Reader subscriptions,1
+Email,Events,1
+Email,Major individual gifts,1
+Email,Reader membership,1
+Owned and operated mobile app(s),Foundation funding,2
+Owned and operated mobile app(s),Reader membership,1
+Owned and operated mobile app(s),Major individual gifts,1
+Print,Foundation funding,1
+Print,Syndicated Content,1
+Print,Direct sold advertising,1
+Social media,Direct sold advertising,15
+Social media,Foundation funding,8
+Social media,Philanthropic funding from major institutions,6
+Social media,Major individual gifts,2
+Social media,Grants,2
+Social media,Programmatic advertising,1
+Social media,Other forms of corporate sponsorship,1
+Social media,Small individual gifts,1
+Social media,Reader membership,1
+Social media,Reader subscriptions,1
+Website,Direct sold advertising,11
+Website,Philanthropic funding from major institutions,4
+Website,Foundation funding,3
+Website,Major individual gifts,3
+Website,Reader membership,2
+Website,Programmatic advertising,2
+Website,Events,2
+Website,Small individual gifts,2
+Website,"Haven’t generated revenue yet, but intend to do so",1
