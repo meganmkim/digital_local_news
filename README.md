@@ -1,7 +1,7 @@
-# Digital Local News for Underserved Communities
+# Digital Local News for Underrepresented Communities
 
 ## Title ##
-**Digital Local News**
+**Digital Local News for Underrepresented Communities**
 
 ## Overview Page ##
 --
@@ -15,7 +15,7 @@ I listed out the following goals for this project:
 
 ## Short description of your findings ##
 **Graph 1: Digital Local News in last 10 years**
-* Last 10 years is when post of the digital local news organizations that serve underserved communities were founded
+* Last 10 years is when post of the digital local news organizations that serve underrepresented communities were founded
 * Most of them are founded by advertising, foundation grants, and donors which indicates that the non-advertising organizations still need to seek more sustainable revenues for the long-term
 * Most recently founded organizations do not rely on advertising which supports previous research that this previously common source of revenue is potentially not viable
 
@@ -26,12 +26,20 @@ I listed out the following goals for this project:
 
 
 ## Summary of the data collection process, with links ##
-**Main Data Source:** [Project News Oasis](https://www.projectnewsoasis.com/publications)
+**Main Data Source:** [Project News Oasis](https://www.projectnewsoasis.com/publications) - Filtered out for digital local news organizations that report for underrepresented communities
+
+_Underrepresented communities defined as:_
+Communities with English as a second language
+Ethnic communities
+Immigrant communities
+LGBTQI communities
+Low-income communities
+People of color
 
 ## Overview of the data analysis process ##
 Data Analysis Process:
 1. Project News Oasis offers various filters, but to start, I downloaded the cvs for the entire database for digital native local news publishers to start. The goal was to familiarize myself with all of the categories (columns) and get a general sense of the patterns in the following topics: tax status, year founded, and budget distribution.
-2. As I was analyzing the budget distribution, I realized that a significant number of papers were missing: 696 papers did not report on their budget distribution. Only 267 papers had data on this. At this point, I decided to narrow down the filter to groups that likely self-reported in the Project News Oasis survey. I based this on the column category that identifies whether the news organization serves any underrepresented groups (e.g. LGBTQ, ethnic communities, low-income). 
+2. As I was analyzing the budget distribution, I realized that a significant number of papers were missing: 696 papers did not report on their budget distribution. Only 267 papers had data on this. At this point, I decided to narrow down the filter to groups that likely self-reported in the Project News Oasis survey. I based this on the column category that identifies whether the news organization serves any underrepresented communities (e.g. LGBTQ, ethnic communities, low-income). 
 3. I imported a new csv file that contained 98 organizations based on the criteria mentioned above. I checked to see how many data points were missing for the Budget breakdown, and only 7 of them were missing data points.
 4. I cleaned up the data columns using .replace(), and then calculated the mean percentage budget breakdown between the 4 categories; editorial, revenue generation, product/technology, and administration. Once calculated, I exported the data frame for a potential data visualization, but ultimately it was not used.
 5. The goal was to understand the largest revenue stream and its relationship with distribution methods. To do this, I listed out all of the possible values. I decided to recategorize the values of the revenue stream to 4-5 broader themes so that I could do a data visualization in the form of a sankey.
