@@ -1,10 +1,10 @@
 # Digital Local News for Underrepresented Communities
 
 ## Title ##
-**Digital Local News for Underrepresented Communities**
+**Digital Local News Organizations Serving Underrepresented Communities Financed by Philanthropy**
 
 ## Overview Page ##
---
+An analysis of digital local news organizations serving underrepresented populations. It looks into the largest revenue source and its relation to their distribution methods. The goal is to understand how these more recently founded organizations make a profit which in turn will help them become more long-term news organizations which is needed in a time when various local news deserts are emerging in the U.S.
 
 ## Short description of what you aimed to accomplish ##
 I listed out the following goals for this project:
