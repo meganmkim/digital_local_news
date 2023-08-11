@@ -1,131 +1,392 @@
+
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Digital Local News Organizations Financed by Philanthropy</title>
-        <link rel="stylesheet" href="style.css">
-
-        <meta property="og:title" content="Digital Local News on Shaky Ground">
-        <meta property="og:description" content="Digital local news for underrepresented communities rely on philanthropy.">
-        <meta property="og:type" content="article">
-        <meta property="og:url" content="https://https://meganmkim.github.io/digital_local_news/">
-        
-
-    </head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Social Media News and Academic Research</title>
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700" rel="stylesheet"><link rel="stylesheet" href="./style.css">
 
     <style>
-        body {
-            margin-top: 0;
-            padding-top: 0
-        }
-    
-        #navbar {
-            padding: 15px 5px;
-            text-align: center;
-            font-size: 16px;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #8b0000
-        }
-    
-        #navbar a {
-            color: #8b0000;
-            padding: 5px 7px;
-            border: none
-        }
-    
-        .methodology {
-            font-style: italic;
-            font-size: .65em;
-            line-height: 1.3
+      #scrolly {
+        position: relative;
+        padding: 1rem;
+      }
+
+      .scrolly-overlay {
+        position: relative;
+        padding: 0;
+        max-width: 35rem;
+        margin: 0 auto;
+      }
+
+      .sticky-thing {
+        position: -webkit-sticky;
+        position: sticky;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        max-width: 100%; /* Ensures the container doesn't exceed the screen width */
+        overflow: hidden; /* Hides any content that overflows the container */
+        margin: 0;
+        z-index: 0;
+        top: 0;
+        min-height: 100vh;
+        /* Center everything inside */
+        display: flex;
+        flex-direction: column;
+        background-color: black;
+      }
+
+      /* .sticky-thing img {
+            width: 100%; /* Make the image fill the container width */
+            height: auto; /* Maintain the aspect ratio of the image */
+        } */
+
+
+      .step {
+        /* margin: 0 auto 2rem auto;
+        margin-bottom: 25rem; */
+        /* background-color: #eee;
+        background-color: #fff; */
+        color: black;
+      }
+
+      /* .step p {
+        text-align: right;
+        padding: 1rem;
+        font-size: 1.25rem;
+      } */
+
+      .hidden { visibility: hidden; }
+
+      /* When it's less than 700 pixels wide, do normal scrollytelling */
+      @media only screen and (min-width: 700px) {
+        #scrolly.side-by-side {
+          display: flex;
         }
 
-        img {
-            width: 100%;
-            height: auto
+        #scrolly.side-by-side > div {
+          flex-basis: 0;
+          flex-grow: 1;
+          flex-shrink: 1;
+          padding: 0.75em;
         }
 
-        .subhead {
-            font-style: italic
+        #scrolly.side-by-side .scrolly-overlay {
+          margin-top: 70vh;
+          order: 0; */
+          /* Change these to adjust sizing options */
+          min-width: 15rem;
+          max-width: 20rem;
         }
 
-        .caption {
-            font-style: italic;
-            font-size: 8px
+        #scrolly.side-by-side .sticky-thing {
+          order: 1;
+          flex-grow: 2;
         }
-
-        .label {
-            color: grey;
-            text-decoration: underline;
-            font-weight: bold
-        }
-
+      }
     </style>
+	<script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.0.4/scrollama.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
+	
+  </head>
 
-    <body>
-        <div class="section">
-            <div class="container content">
-                <div id="navbar"> Lede: Project 1 <a href="https://meganmkim.github.io/digital_local_news/">GitHub
-                    Documentation</a> </div>
+<!--CSS-->
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
 
-                <p><a href="https://meganmkim.github.io/">&#8592; Back</a></p>
+.small-image {
+    width: 35%; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
 
-                <p class="label">News</p>
-                <h1 class="title">Digital Local News Organizations Financed by Philanthropy</h1>
-                <p class="subhead">Digital local news that serve underrepresented populations are financed by the traditional source of advertisements but also the unsuspecting grace of philanthropy. While promising, the sustainability of these organizations is still questionable. </p>
-            </div>
+.large-image {
+    width: 40%;
+    height: auto;
+    display: block;
+}
 
-            <div>
-                <img src ="header_image.jpg"><a href="https://www.freepik.com/free-photo/businesswoman-reading-daily-news_2894906.htm#query=digital%20local%20news&position=16&from_view=search&track=ais"> 
-                    <p class="caption">Image by rawpixel.com</a> on Freepik</p>
-            </div>
+#scrolly {
+    position:relative;
+}
 
-        
-             <div class="container content">
-                <p class="byline">By <span>Megan Kim</span></p>
-                <p class="date">July 11, 2022</p>
+</style>
 
-                <p class="article__text">Local news, particularly traditional print, has plummeted over the more recent years, drawing large concern over the state of stranded communities and the state of democracy. Previous research has indicated that local news is particularly important in stimulating civic engagement, holding governments accountable, and providing alternative opinions that counter the effects of polarization. (<a href ="https://www.theajp.org/why-local-news/">American Journalism Project</a>).</p>
-
-                <p class="article__text">Yet, 1,800 communities have lost their local newsroom since 2004 <a href ="https://www.usnewsdeserts.com/reports/expanding-news-desert/"> UNC</a>. A great deal of these closures can likely be attributed to the significant loss of advertising and subscription revenue streams. Most of the local print newspapers’ revenue stemmed from advertising and subscriptions, but the revenue of advertising, for example, has dropped by 80%. (American Journalism Project) Yet, 1,800 communities have lost their local newsroom since 2004.</p>
-
-                <h2> Tech Giants Remove News' Main Revenue</h2>
-
-                <p class="article__text">Ironically, technology is both the perpetrator and the solution. Companies like Google, Youtube, and Amazon dominate the advertisement space. A space that waw once the main revenue source for many newspapers. A great deal of the closures of local news organizations can likely be attributed to the significant loss of advertising and subscription revenue streams. Most of the local print newspapers’ revenue stemmed from advertising and subscriptions, but the revenue of advertising, for example, has dropped by 80%. (<a href ="https://www.theajp.org/why-local-news/">American Journalism Project</a>).</p>
-                    
-                <p class="article__text">Nearly nine out of ten Americans currently obtain some local news digitally (<a href ="https://www.pewresearch.org/journalism/2019/03/26/for-local-news-americans-embrace-digital-but-still-want-strong-community-connection/">Pew Research </a>). The tendency to read local news on social media is even higher for younger readers and in communities where there is a higher proportion of Hispanic and Black residents (<a href ="https://www.pewresearch.org/journalism/2019/03/26/overall-social-media-plays-a-moderate-role-in-local-news/">Pew Research </a>). There is an emerging demand that needs to be met as more Americans, particularly in communities that are underrepresented, seek out local news digitally. The question is, how can these digital local news organizations that purposefully seek to serve these communities succeed during a declining trend of local news?
-                    </p>
-                
-                <h2>Digital Local News and Philanthropy</h2>
-                
-                <div class="svg-container">
-                    <img src="yr_revenue.svg"/>
-                </div>
-
-                <p class="article__text">As seen in the graph above, digital local news organizations serving underrepresented populations were sparse in the last couple decades of the 20th century (or they didn’t survive), but in the past fifteen years there has been a significant uptick of digital local news organizations. Most of the earlier founded organizations still rely on advertisements for their largest source of revenue. While that holds true for some of the recently founded organizations, there is also an increased reliance on philanthropy: foundation, grants, and corporations. </p>
-
-                <div class="svg-container">
-                    <img src="revenue.svg"/>
-                </div>
-                
-                <p class="article__text">Using Project News Oasis’ data, we decided to do a deeper analysis on the dataset of 98 digital local news organizations serving underrepresented communities to understand their largest source of revenue. While advertising is still a core revenue, a good portion of the organizations seem to rely upon foundation funding, philanthropic giving from corporations, and individual donors. Unfortunately, these new forms rely upon money given from a third-party source in the form of donations and grants, which is not conducive for long-term success if organizations fail to establish a self-sustaining revenue.</p>
-
-                <div class="svg-container">
-                    <img src="revenue_distribution.svg"/>
-                </div>
-
-                <p class="article__text">
-                Taking a closer look at both the largest revenue source and the distribution method of these organizations, it becomes apparent that there are certain distribution methods that are most commonly funded. The organizations reported all the ways in which they distribute the news which is why there are greater than 98 main revenue sources and distribution methods reported in the graph above. The graph instead depicts the general flow of distribution methods that are most commonly used and potentially seen as valid, or financially viable, approaches. Unfortunately, this also shows that organizations that rely on institution funding and individual gifts may be in danger of following the closure wave of traditional local news. Philanthropy won't always be there to fund and fill the local news desert which means these organizations better start seeking for other revenues now. Otherwise, we will be left with yet an even larger news desert.</p>
-                
-            </div>
-
+<!--Header-->
+  <body>
+    <div class="article-header">
+        <div class="headline">
+          <p>MA Instructional Technology & Media</p>
+          <h1>Social Media News and Academic Research</h1>
+          <div class="byline">Megan Kim</div>
         </div>
-            <div class="methodology">
-                <p><strong>Methodology</strong></p>
-                <p>Data pulled from <a
-                    href="https://www.projectnewsoasis.com/publications">Project News Oasis</a></p>
+        <div class="image"></div>
+      </div>
+
+	  <div class="category">
+        <hr>
+        <div class="title">
+            <p class="subheader">Problem</p>
+            <header class="title">The Modern News Landscape</header>
+        </div>
+		<p class="article-text">
+            The rise of the Internet age has brought about the decline of traditional, printed news while digital news becomes increasingly popular. Many underrepresented communities are receiving local news online from organizations financed by advertisements, institutions, and individual donors.</p>
+        <hr>
+	  </div>
+    
+	<!--Scrolly for map here-->
+      <section id="scrolly">
+
+        <div class="sticky-thing" id="map"> 
+            <div class="title">
+                <p class="subheader">Background</p>
+			    <header>The Decline of Local News in Print</header>
+             </div>
+            <div class="flex-container" style="display: flex; align-items: flex-start;">
+                <div class="article">
+                    <p class="description" style="background-color:#2D2D2D;">
+                        The number of local newsrooms in the U.S. has plummeted in recent years, drawing large concern over the state of democracy as large swaths of 'news deserts' emerge. The apprehension is based on the fact that previous research has indicated that local news is particularly important in stimulating civic engagement, holding governments accountable, and providing alternative opinions that counter the effects of polarization (<a href ="https://www.theajp.org/why-local-news/">American Journalism Project</a>). To put it in perspective, 1,800 communities have lost their local newsroom since 2004 (<a href ="https://www.usnewsdeserts.com/reports/expanding-news-desert/">UNC</a>).</p>
+                </div>
             </div>
+        </div>
+
+        <div class="sticky-thing">
+            <div class="title">
+            <p class="subheader">Background</p>
+            <header>Internet Replaces Newspapers' Main Revenue Source</header>
          </div>
+            <div class="flex-container" style="display: flex; align-items: flex-start;">
+                <div class="article step" style="flex: 1; margin-right: 100px;">
+                    <p class="description"> A great deal of these closures can likely be attributed to the significant loss of advertising and subscription revenue streams. Most of the local print newspapers’ revenue stemmed from advertising and subscriptions, but the revenue of advertising, for example, has dropped by 80% (<a href ="https://www.theajp.org/why-local-news/">American Journalism Project</a>).</p>
+                    <img src="ad_trend_graphic.jpg">
+                </div>
+            </div>
         </div>
-    </body>
+
+        <div class="sticky-thing"> 
+            <div class="title">
+                <p class="subheader">Dataset</p>
+                <header>Rise of Digital News</header>
+             </div>
+            <div class="flex-container" style="display: flex; align-items: flex-start;">
+                <div class="article">
+                    <p class="description">Nearly nine out of ten Americans currently obtain some local news digitally (<a href ="https://www.pewresearch.org/journalism/2019/03/26/for-local-news-americans-embrace-digital-but-still-want-strong-community-connection/">Pew Research </a>). The tendency to read local news on social media is even higher for younger readers and in communities where there is a higher proportion of Hispanic and Black residents (<a href ="https://www.pewresearch.org/journalism/2019/03/26/overall-social-media-plays-a-moderate-role-in-local-news/">Pew Research </a>). There is an emerging demand that needs to be met as more Americans, particularly in communities that are underrepresented, seek out local news digitally. The question is, how are these digital local news organizations that purposefully seek to serve these communities succeed during a declining trend of local news?
+                    </p>
+                    <p class="description">
+                        The following analysis focuses on the combination of the prevalence of Americans consuming local news digitally and the higher proportion of Hispanic and Black residents reading the news via social media. The data analyzed was extracted from a larger dataset on all local news organizations. The subsequent graphs are based on a subset of data on digital local news organizations that serve underrepresented communities. 
+                    </p>
+                </div>
+            </div>
+            <div class="methodology" style= "text-align: center;">
+                <p style="text-decoration: underline;"><strong>Methodology</strong></p>
+                <p>All graphs below were originally pulled from the following dataset: <a
+                    href="https://www.projectnewsoasis.com/publications">Project News Oasis</a></p>
+                <p>GitHub Process: <a href="https://meganmkim.github.io/digital_local_news/">GitHub
+                    Documentation</a></p>
+            </div>
+        </div>
+
+        <div class="sticky-thing">
+            <div class="title">
+            <p class="subheader">Data Analysis</p>
+            <header>Digital News for Underrepresented Communities</header>
+         </div>
+            <div class="flex-container" style="display: flex; align-items: flex-start;">
+
+                <div class="article" style="flex: 1; margin-right: 100px;">
+                    <p class="description">The dataset contained 98 digital local news organizations serving underrepresented communities. All of them relied on advertising as a main source of revenue, but it was often supplemented by institutional funding and individual gifts. The graph depicts how the digital distribution methods are funded by these main revenue streams. The three most common methods are websites, social media, and third party content platforms</p>
+                </div>
+                <div class="image-container" style="flex: 2;">
+                    <img id="" src ="revenue_distribution.svg">
+                </div>
+            </div>
+        </div>
+
+        <div class="sticky-thing"> 
+            <div class="title">
+                <p class="subheader">Data Analysis</p>
+                <header>Digital Local News and Philanthropy</header>
+             </div>
+			
+            <div class="flex-container" style="display: flex; align-items: flex-start;">
+                <div class="article" style="flex: 1; margin-right: 100px;">
+
+                    <p class="description">When organizations were asked to identify their largest source of revenue, philanthropic funding from foundations, major institutions, and individuals play a large role. Advertising is still a large source of revenue, but philanthropy heavily contributes to the digital local news ecosystem.  </p>
+                </div>
+                <div class="image-container" style="flex: 2;">
+                    <img id="" src ="revenue.svg">
+                </div>
+            </div>
+        </div>
+
+        <div class="sticky-thing"> 
+            <div class="title">
+                <p class="subheader">Data Analysis</p>
+                <header>Uptick of Philanthropy in Local News</header>
+             </div>
+			
+            <div class="flex-container" style="display: flex; align-items: flex-start;">
+                <div class="article" style="flex: 1; margin-right: 100px;">
+                    <p class="description">As seen in the graph, digital local news organizations serving underrepresented populations were sparse in the last couple decades of the 20th century (or they didn’t survive), but in the past fifteen years there has been a significant uptick of digital local news organizations. Most of the earlier founded organizations still rely on advertisements for their largest source of revenue. While that holds true for some of the recently founded organizations, there is also an increased reliance on philanthropy: foundation, grants, and corporations. </p>
+                </div>
+                <div class="image-container" style="flex: 2;">
+                    <img id="" src ="yr_revenue.svg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!--Pitfalls of Social Media News-->
+
+<!-- <div class="category">
+    <hr>
+    <div class="title">
+        <p class="subheader">Social Media News</p>
+        <header class="title">Pros & Cons </header>
+    </div>
+    <p class="article-text">Add in information here... with graphics?</p>
+    <hr>
+  </div> -->
+
+  <!--Academia-->
+
+    <div class="category">
+        <hr>
+        <div class="title">
+            <p class="subheader">Academia</p>
+            <header class="title">Digital News Research</header>
+        </div>
+		<p class="article-text">Parallel to the rise of digital news, a new research field has emerged in academia as researchers attempt comprehend the complexities of how social media news is altering the fabric of society. Research is being conducted on how social media is expanding access to information and utilized for political activism, but also on the lack of media literacy, the spread of misinformation, and the exacerbation of polarization.
+        </p>
+        <hr>
+	  </div>
+
+    <!--Academia Papers - Related information-->
+<div class="category">
+    <div class="title">
+        <header>My Portfolio</header>
+        <p class="description" style= "font-size: small; color:#CFE1F2;">
+            The following papers are examples of academic research conducted on digital news
+        </p>
+    </div>
+
+    <div class="flex-container" style="display: flex; align-items: flex-start;">
+        <div class="article-text col-sm" style="flex: 1; margin-right: 10px; margin-left: 10px;">
+            <p style="color:#CFE1F2; text-decoration: underline;">Google News Recommendation System Redesign</p>
+            <p class="paper" style= "font-size: medium; color:#CFE1F2;">
+                A cognitive approach that integrates reader agency and serendipity to redesign Google's News Recommendation System, an algorithm that tends to foster polarization through filter bubbles.
+            </p>
+        </div>
+
+        <div class="article-text col-sm" style="flex: 1; margin-right: 10px; margin-left: 10px;">
+            <p style="color:#CFE1F2; text-decoration: underline;">TikTok Microaggressions Against Asians</p>
+            <p class="paper" style= "font-size: medium; color:#CFE1F2;">
+                A qualitative analysis of comments on TikTok videos addressing microaggressiosn against Asian Americans.
+            </p>
+        </div>
+
+        <div class="article-text col-sm" style="flex: 1; margin-right: 10px; margin-left: 10px;">
+            <p style="color:#CFE1F2; text-decoration: underline;" >Surveillance in Social Media Activism Research</p>
+            <p class="paper" style= "font-size: medium; color:#CFE1F2;">
+                An appeal to incorporate surveillance in social media activism research through the lens of a case study on K-pop activism during BLM.
+            </p>
+        </div>
+    </div>
+
+    <!--Embedded pdfs of research papers-->
+
+        <div class="flex-container" style="display: flex; align-items: flex-start;">
+            <div class="article-text" style="flex: 1; margin-right: 10px;">
+                <object data=
+                "google_news_rec_paper.pdf" 
+                                width="350"
+                                height="500">
+                        </object>
+            </div>
+            <div class="article-text" style="flex: 1; margin-right: 10px;">
+                    <object data=
+                    "TikTok_Asian_Microaggressions_Discourse.pdf" 
+                                    width="350"
+                                    height="500">
+                            </object>
+            </div>
+            <div class="article-text" style="flex: 1; margin-right: 10px;">
+                <object data=
+                "Digital_Surveillance_SM_Activism.pdf" 
+                                width="350"
+                                height="500">
+                        </object>
+            </div>
+        </div> 
+</div>
+
+<!--Section on Current Methodology for Social Media research-->
+<!-- <div class="category">
+    <div class="title">
+        <p class="subheader">Academia</p>
+        <header>Current Methodology</header>
+    </div>
+
+    <div>
+        <p class="description" style= "font-size: medium; color:#CFE1F2;"> A sample of manually collected of TikTok video comments on Asian Microaggressions.</p>
+    </div> -->
+
+
+    <!-- <div class="flex-container">
+        <div class="spreadsheet" style = "align: center;">
+            <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ3QoWBuoJgRLjrZj8Xbh5c9BmJzXnApY82FUYNYHZZKyag1G3zQtrPjwyOpaqB3nHe_K0g2m5IGDBv/pubhtml?gid=926688504&amp;single=true&amp;widget=true&amp;headers=false" width="900"
+            height="500"></iframe>
+        </div>
+    </div> -->
+
+</div>
+
+<!--Section on Educational tools for researchers and readers-->
+<div class="category">
+    <div class="title">
+        <p class="subheader">Academia & Digital News</p>
+        <header>Tools for Researchers & Readers</header>
+    </div>
+
+<!--Insert potential explorations for thesis here-->
+<div class="flex-container" style="display: flex; align-items: flex-start;">
+    <div class="article-text col-sm" style="flex: 1; margin-right: 10px; margin-left: 10px;">
+        <p class="subheader" style="color:#CFE1F2; text-decoration: underline;">Youtube Web Scraping Comments</p>
+        <p class="description" style= "font-size: medium; color:#CFE1F2;">
+            Currently in progress. The goal is to create a web scraper tool based on the a small sample use case of the Women and Men's World Cup comments when the U.S. team was knocked out. Once collected, the comments would be processed through a text sentiment analysis to determine the level of sexism and nationalism.
+        </p>
+    </div>
+
+    <div class="article-text col-sm" style="flex: 1; margin-right: 10px; margin-left: 10px;">
+        <p class="subheader" style="color:#CFE1F2; text-decoration: underline;">Educational Curriculum on Misinformation on Social Media</p>
+        <p class="description" style= "font-size: medium; color:#CFE1F2;">
+            TBD: Application of instructional design to help social media users engage effectively with the news on digital platforms.
+        </p>
+    </div>
+
+    <div class="article-text col-sm" style="flex: 1; margin-right: 10px; margin-left: 10px;">
+        <p class="subheader"style="color:#CFE1F2; text-decoration: underline;" >Data Literacy and Games</p>
+        <p class="description" style= "font-size: medium; color:#CFE1F2;">
+            TBD: Using games to educate readers on how to understand data visuals in the news.
+        </p>
+    </div>
+</div>
+</div>
+
+
+</body>
 </html>
+
+
+

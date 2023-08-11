@@ -1,0 +1,255 @@
+/* Scroll down for CSS Grid rules */
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+  }
+  
+  body {
+    position: relative;
+    min-height: 100%;
+    font-family: 'Inter', sans-serif;
+    padding-bottom: 8rem;
+    margin: -10px -10px 0 -10px;
+    background-color: #000000;
+  }
+  
+  intro {
+    position: relative;
+    min-height: 100%;
+    font-family: 'Inter', sans-serif;
+    padding-bottom: 8rem;
+    margin: -10px -10px 0 -10px;
+    background-color: white;
+  }
+  
+  
+  article {
+    height: 100%;
+  }
+  
+  .image {
+    background-image: url("header_image.jpg");
+    background-size: cover;
+  }
+  
+  .headline {
+    background-color: #2D2D2D;
+    color: #FDFDFD;
+    padding: 4.209rem;
+    text-align: center;
+    
+  }
+  
+  .headline p {
+    font-size: 1.25em;
+  }
+  .headline h1 {
+    margin-top: 0.317em;
+    margin-bottom: 0.5em;
+    font-size: 4.209em;
+    font-weight: 650;
+    text-transform: uppercase;
+    line-height: 1;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .mural {
+    width: 100%; /* Make sure the container takes full width of its parent */
+      height: 100vh; /* Make the container full height of the viewport */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .mural img {
+    max-width: 100%; /* Limit the image width to fit the container */
+    max-height: 100%; /* Limit the image height to fit the container */
+    object-fit: contain; /* Fit the image inside the container while maintaining aspect ratio */
+  }
+  
+  .byline {
+    margin: 0 1rem 1rem 1rem;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: -0.2px;
+  }
+
+  .title {
+    background-color: #2D2D2D;
+    color: #FDFDFD;
+    padding: 2rem;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 650;
+    text-transform: uppercase;
+    line-height: 1;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .article-text {
+    margin: -1em auto;
+    padding: 1.5em 1em;
+    max-width: 800px;
+    font-size: 1.4em;
+    line-height: 1.77;
+    color: white;
+    text-align: center;
+  }
+  
+h4 {
+    margin-top: 0.2em;
+    margin-bottom: 0em;
+    font-size: 1.8em;
+    font-weight: 450;
+    line-height: 1;
+    color: white;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    padding: 0.5em 0.5em;
+  }
+
+ .title p {
+    margin: -1em auto;
+    padding: 1.5em 1.5em;
+    max-width: 800px;
+    font-size: .6em;
+    line-height: 1.77;
+    color: #69BDA9;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  .description {
+    padding: 0.5em .5em;
+    font-size: .9em;
+    line-height: 1.5;
+    color: white;
+    text-align: center;
+  }
+  
+  
+  
+  .first::first-letter {
+    float: left;
+    margin: 0 0.2em 0 0;
+    color: #2D2D2D;
+    font-size: 5.61em;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+  }
+  
+  footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #2D2D2D;
+    color: #FDFDFD;
+    text-align: center;
+  }
+  
+  /* CSS Grid starts here! */
+  
+  .article-header {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 2fr 1fr 1fr 1fr;
+  }
+  
+  .image {
+    grid-column: 1 / -1;
+    grid-row: 1 / 3;
+  }
+  .headline {
+    grid-column: 2 / 3;
+    grid-row: 2 / 4;
+    z-index: 100;
+  }
+  
+  img {
+    max-width: 1;
+    margin: 0 auto;
+  }
+  
+  .container {
+    display: inline-flex;
+  }
+  
+  .graph {
+    flex: 1;
+    margin-right: 20px;
+    width: 5%;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 2px;
+  }
+  
+  .flex-container {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  
+.flex-container img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .image-container {
+    flex: 1;
+    width: 80%;
+    margin-left: 20px; /* Add spacing between ai2html-container and image-container */
+    padding: 10px; /* Add spacing inside image-container */
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center;
+  }
+
+  hr{
+    padding: 5px;
+  }
+
+  .article {
+    flex: 1;
+    width: 5%;
+    align-items: center;
+    margin: -1em;
+    padding: 2em 2em;
+    /* max-width: 900px; */
+    font-size: 1.2em;
+    line-height: 1.77;
+    color: white;
+    text-align: center;
+    top: 50%;
+  }
+
+  .methodology {
+    font-style: italic;
+    font-size: .65em;
+    line-height: 1.3;
+    color: white;
+}
+
+.spreadsheet {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 1em 1em;
+    display: block;
+}
+
+#map {
+    background-image: url(map.png);
+    background-size: 660px;
+    width: 1233px;
+    height: 300px;
+    border: 2px solid;
+   
+}
+
+.paper {
+    padding-top: 0px;
+}
