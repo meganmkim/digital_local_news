@@ -1,7 +1,7 @@
-# Digital Local News for Underrepresented Communities
+# Digital Local News for Underrepresented Communities & Academic Research on Digital News
 
 ## Title ##
-**Digital Local News Organizations Serving Underrepresented Communities Financed by Philanthropy**
+**Digital Local News Organizations Serving Underrepresented Communities & Academic Research on Digital News**
 
 ## Overview Page ##
 An analysis of digital local news organizations serving underrepresented populations. It looks into the largest revenue source and its relation to their distribution methods. The goal is to understand how these more recently founded organizations make a profit which in turn will help them become more long-term news organizations which is needed in a time when various local news deserts are emerging in the U.S.
@@ -10,14 +10,14 @@ An analysis of digital local news organizations serving underrepresented populat
 I listed out the following goals for this project:
 1. Increase my comfort level analyzing data using pandas. My first project was more linear and mainly followed the lessons and homework. 
 2. Try using a new graphing tool other than Datawrapper. Interested particularly in using D3.
-3. Create a new type of graph that was not a pie, line, scatter, etc.
+3. Create a new type of graph
 4. Use Figma to customize graph and export into HTML (use figma2html).
 
 ## Short description of your findings ##
 **Graph 1: Digital Local News in last 10 years**
-* Last 10 years is when post of the digital local news organizations that serve underrepresented communities were founded
+* Last 10 years is when most of the digital local news organizations that serve underrepresented communities were founded
 * Most of them are founded by advertising, foundation grants, and donors which indicates that the non-advertising organizations still need to seek more sustainable revenues for the long-term
-* Most recently founded organizations do not rely on advertising which supports previous research that this previously common source of revenue is potentially not viable
+* Most recently founded organizations do not rely on advertising as their largest source of revenue which supports previous research that this previously common source of revenue is potentially not viable
 
 **Graph 2: Revenue Source & Distribution**
 * 3 main sources of revenue: advertising, institution funding (grants, corporation, foundations), and individual gifts
